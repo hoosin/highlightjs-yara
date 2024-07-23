@@ -1,0 +1,33 @@
+{
+  "name": "highlightjs-yara",
+  "version": "1.1.1",
+  "description": "Yara Language syntax highlighting plugin for highlight.js",
+  "main": "src/yara.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoosin/highlightjs-yara.git"
+  },
+  "keywords": [
+    "yara",
+    "hljs",
+    "highlightjs",
+    "highlight.js"
+  ],
+  "author": "Deniz Demirci",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/hoosin/highlightjs-yara/issues"
+  },
+  "homepage": "https://github.com/hoosin/highlightjs-yara#readme",
+  "devDependencies": {
+    "highlight.js": "^10.7.2",
+    "mocha": "^5.2.0",
+    "should": "^13.2.3"
+  },
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
+}

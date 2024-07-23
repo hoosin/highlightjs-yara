@@ -1,0 +1,27 @@
+rule CISA_3P_10301706_01 : HiddenCobra ECCENTRICBANDWAGON backdoor keylogger reconnaissance screencapture spyware trojan   
+   {   
+      meta:   
+          Author = "CISA Trusted Third Party"   
+          Incident = "10301706.r1.v1"   
+          Date = "2020-08-11"   
+          Actor = "Hidden Cobra"   
+          Category = "Backdoor Keylogger Reconnaissance Screen-Capture Spyware Trojan"   
+          Family = "ECCENTRICBANDWAGON"   
+          Description = "Detects strings in ECCENTRICBANDWAGON proxy tool"   
+          MD5_1 = "d45931632ed9e11476325189ccb6b530"   
+          SHA256_1 = "efd470cfa90b918e5d558e5c8c3821343af06eedfd484dfeb20c4605f9bdc30e"   
+          MD5_2 = "acd15f4393e96fe5eb920727dc083aed"   
+          SHA256_2 = "32a4de070ca005d35a88503717157b0dc3f2e8da76ffd618fca6563aec9c81f8"   
+          MD5_3 = "34404a3fb9804977c6ab86cb991fb130"   
+          SHA256_3 = "c6930e298bba86c01d0fe2c8262c46b4fce97c6c5037a193904cfc634246fbec"   
+          MD5_4 = "3122b0130f5135b6f76fca99609d5cbe"   
+          SHA256_4 = "9ea5aa00e0a738b74066c61b1d35331170a9e0a84df1cc6cef58fd46a8ec5a2e"   
+      strings:   
+          $sn1 = { FB 19 9D 57 [1-6] 9A D1 D6 D1 [1-6] 42 9E D8 FD }   
+          $sn2 = { 4F 03 43 83 [1-6] 48 E0 1A 2E [1-6] 3B FD FD FD }   
+          $sn3 = { 68 56 68 9A [1-12] 4D E1 1F 25 [1-12] 3F 38 54 0F [1-12] 73 30 62 A1 [1-12] DB 39 BD 56 }   
+          $sn4 = "%s\\chromeupdater_ps_%04d%02d%02d_%02d%02d%02d_%03d_%d" wide ascii nocase   
+          $sn5 = "c:\\windows\\temp\\TMP0389A.tmp" wide ascii nocase   
+      condition:   
+          any of them   
+   }
